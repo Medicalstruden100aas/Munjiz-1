@@ -42,6 +42,9 @@ function doGet(e) {
   var list = [];
   for (var i = 0; i < rows.length; i++) {
     var r = rows[i];
+    if (String(r[0]) === "id" || isNaN(Number(r[5]))) {
+      continue;
+    }
     list.push({
       name: r[1],
       juz: r[2],

@@ -2277,7 +2277,7 @@ html.swiping,html.swiping body{overflow-x:hidden}
   function lbUnits(u){return '<div class="units">'+u.map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';}).join("")+'</div>';}
   function lbList(){
     var lb=lbS(),P=lbPts(),demo=!LB_API,src=demo?[]:(lbCache||[]);
-    var arr=src.filter(function(x){return !x.me;}).map(function(x){return {name:x.name,juz:x.juz,v:lbTab==="wk"?x.wk:x.all};});
+    var arr=src.filter(function(x){return x&&!x.me&&typeof x.name==="string"&&x.name!=="name"&&isFinite(Number(x.all))&&isFinite(Number(x.wk));}).map(function(x){return {name:x.name,juz:x.juz,v:lbTab==="wk"?x.wk:x.all};});
     if(lb.on)arr.push({name:lb.name,juz:lb.juz,v:lbTab==="wk"?P.wk:P.all,me:true});
     arr.sort(function(a,b){return b.v-a.v;});
     var rank=0;arr.forEach(function(x,i){if(x.me)rank=i+1;});
@@ -2431,7 +2431,7 @@ html.swiping,html.swiping body{overflow-x:hidden}
   renderList();renderProgress();tick();setInterval(tick,1000);
 })();
 </script>
-<!--v202610302000-->
+<!--v202610311100-->
 
 
 <script>

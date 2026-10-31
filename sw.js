@@ -1,4 +1,4 @@
-const VERSION = "202610302000";
+const VERSION = "202610311100";
 const FONTS = "lt-fonts";   // never deleted: fonts are downloaded once, not on every update
 const CACHE = "lectures-" + VERSION;
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png", "./icon-maskable-512.png"];
